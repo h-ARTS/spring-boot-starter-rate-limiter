@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'com.hanankhan'
+version '1.0.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Optional: For Redis-based implementation of rate limiting
+    // implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    // Bucket4j: A Java rate limiting library
+    implementation 'com.github.vladimir-bukhtoyarov:bucket4j-core:7.6.0'
+
+    // Spring Boot Test dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//publishing {
+//
+//}
